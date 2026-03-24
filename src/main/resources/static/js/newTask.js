@@ -60,12 +60,29 @@ const validateCategories = () => {
 const DateAndTimeFormatter = () => {
     const date = document.getElementById('date-picker').value.trim();
     const time = document.getElementById('time-picker').value.trim();
+    const dateError = document.getElementById('date-error');
+    const timeError = document.getElementById('time-error');
     const now = new Date();
 
     if (date && time) {
         return isValid(formatter(date, time),now);
     }
-    return false;
+    if(!date){
+        dateError.textContent = 'Campo obligatorio';
+        dateError.classList.remove('hidden');
+        return false;
+    }
+    else{
+        dateError.classList.add('hidden');
+    }
+    if(!time){
+        timeError.textContent = 'Campo obligatorio';
+        timeError.classList.remove('hidden');
+        return false;
+    }
+    else{
+        timeError.classList.add('hidden');
+    }
 };
 
 const formatter = (date, time) => {

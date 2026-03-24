@@ -160,7 +160,7 @@
             </div>
 
             <div class="flex justify-between">
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Enviar</button>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Agregar</button>
                 <button type="button" class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600" onclick="window.history.back()">Atrás</button>
             </div>
             </form:form>
