@@ -1,4 +1,4 @@
-FROM openjdk:21-buster
+FROM eclipse-temurin:21
 LABEL key="tune-do-team"
 RUN groupadd spring && useradd -r -g spring spring
 USER spring:spring
