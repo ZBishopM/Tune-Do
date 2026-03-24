@@ -13,7 +13,6 @@
     <script src="/js/musicPlayer.js" defer></script>
     <script src="/js/delete.js" defer></script>
     <script src="/js/statistic.js" defer></script>
-    <script src="/js/swal.js" defer></script>
     <script>
         var tasksData = JSON.parse('<c:out value="${tasksJson}" escapeXml="false"/>');
     </script>
