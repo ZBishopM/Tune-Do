@@ -74,8 +74,8 @@ function validatePassword() {
     const password = document.getElementById('contraseña').value;
     const passwordError = document.getElementById('passwordError');
     
-    // Expresión regular para verificar al menos 8 caracteres, al menos una letra y al menos un número
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    // Allow special characters, enforce 8+ length, 1 letter, 1 number
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
     const isValid = passwordRegex.test(password);
     
     passwordError.classList.toggle('hidden', isValid);
@@ -132,4 +132,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('registrationForm');
     form.addEventListener('submit', validateForm);
 
+    // Disable copy/paste/drag on password fields for security
+    const passwordFields = [document.getElementById('contraseña'), document.getElementById('confirmar')];
+    passwordFields.forEach(field => {
+        if (field) {
+            ['copy', 'cut', 'dragstart'].forEach(event => {
+                field.addEventListener(event, (e) => e.preventDefault());
+            });
+        }
+    });
 });
