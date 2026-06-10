@@ -112,11 +112,18 @@ document.addEventListener('DOMContentLoaded', () => {
     months();
     years();
 
-    // Agregar eventos de entrada para validaciones en tiempo real cuando el usuario modifica el form después de haberlo envíado una vez
+    // Agregar eventos de entrada para validaciones en tiempo real
     document.getElementById('nombre').addEventListener('input', validateName);
     document.getElementById('email').addEventListener('input', validateEmail);
     document.getElementById('contraseña').addEventListener('input', validatePassword);
     document.getElementById('confirmar').addEventListener('input', validateConfirmPassword);
+    
+    // Handle browser autofill
+    document.getElementById('nombre').addEventListener('change', validateName);
+    document.getElementById('email').addEventListener('change', validateEmail);
+    document.getElementById('contraseña').addEventListener('change', validatePassword);
+    document.getElementById('confirmar').addEventListener('change', validateConfirmPassword);
+
     document.getElementById('day').addEventListener('change', validateDate);
     document.getElementById('month').addEventListener('change', validateDate);
     document.getElementById('year').addEventListener('change', validateDate);

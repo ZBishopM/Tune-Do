@@ -98,7 +98,7 @@ public class UserController {
         return "registration.jsp";
     }
         userService.save(user);
-        return "redirect:/login/?registered";
+        return "redirect:/login?registered";
     }
 
     @GetMapping("/register")
