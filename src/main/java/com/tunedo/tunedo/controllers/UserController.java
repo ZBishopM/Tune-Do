@@ -68,10 +68,13 @@ public class UserController {
     public String save(
         @Valid @ModelAttribute("user") User user,
         BindingResult result,
-        @RequestParam("day") Integer day,
-        @RequestParam("month") Integer month,
-        @RequestParam("year") Integer year
+        @RequestParam(value="day", required=false) Integer day,
+        @RequestParam(value="month", required=false) Integer month,
+        @RequestParam(value="year", required=false) Integer year
     ) {
+        if (user == null) {
+            return "registration.jsp";
+        }
         if (result.hasErrors()) {
             return "registration.jsp";
         }

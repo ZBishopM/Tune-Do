@@ -104,6 +104,7 @@
                     <option value="" disabled>Seleccionar categorías</option>
                     <c:forEach items="${categories}" var="category">
                         <option value="${category.id}">
+                            <c:if test="${task.categories.contains(category)}">selected</c:if>>
                             <c:out value="${category.name}" />
                         </option>
                     </c:forEach>

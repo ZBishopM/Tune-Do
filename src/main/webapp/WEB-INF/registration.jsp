@@ -20,7 +20,7 @@
         
         <form:label path="name" class="block">
             <h4 class="text-sm font-medium text-gray-700 mb-1">Nombre:</h4>
-            <form:input path="name" type="text" name="nombre" id="nombre"
+            <form:input path="name" type="text" id="nombre"
                 class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
             <p id="nombreError" class="text-red-600 text-sm hidden">Campo obligatorio</p>
             <form:errors class="text-red-600 text-sm" path="name" />
@@ -28,7 +28,7 @@
 
         <form:label path="email" class="block">
             <h4 class="text-sm font-medium text-gray-700 mb-1">Email:</h4>
-            <form:input path="email" type="email" name="email" id="email"
+            <form:input path="email" type="email" id="email"
                 class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
             <p id="emailError" class="text-red-600 text-sm hidden">Correo inválido</p>
             <form:errors class="text-red-600 text-sm" path="email" />
@@ -56,7 +56,7 @@
 
         <form:label path="password" class="block">
             <h4 class="text-sm font-medium text-gray-700 mb-1">Contraseña:</h4>
-            <form:input path="password" type="password" name="contraseña" id="contraseña"
+            <form:input path="password" type="password" id="contraseña"
                 class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
             <p id="passwordError" class="text-red-600 text-sm hidden">La contraseña debe tener al menos 8 caracteres, una letra y un número</p>
             <form:errors class="text-red-600 text-sm" path="password" />
@@ -64,7 +64,7 @@
 
         <form:label path="passwordConfirmation" class="block">
             <h4 class="text-sm font-medium text-gray-700 mb-1">Confirmar contraseña:</h4>
-            <form:input path="passwordConfirmation" type="password" name="confirmar" id="confirmar"
+            <form:input path="passwordConfirmation" type="password" id="confirmar"
                 class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
             <p id="confirmPasswordError" class="text-red-600 text-sm hidden">Las contraseñas no son idénticas</p>
             <form:errors class="text-red-600 text-sm" path="passwordConfirmation" />

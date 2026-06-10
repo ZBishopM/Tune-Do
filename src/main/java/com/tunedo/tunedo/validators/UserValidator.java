@@ -33,7 +33,7 @@ public class UserValidator implements Validator {
         
         assignUserRoles(user);
 
-        if (userService.existsByEmail(user.getEmail())) {
+        if (user.getEmail() != null && userService.existsByEmail(user.getEmail())) {
             errors.rejectValue("email", "USER_EMAIL_ALREADY_REGISTERED");
         } else {
             if (passwordsMismatch(user)) {
@@ -43,17 +43,18 @@ public class UserValidator implements Validator {
     }
 
     public boolean passwordsMismatch(User user) {
+        if (user.getPassword() == null || user.getPasswordConfirmation() == null) {
+            return true;
+        }
         return user.getPassword().equals(user.getPasswordConfirmation()) == false;
     }
 
     private void assignUserRoles(User user) {
         Set<Role> userRoles = new HashSet<>();
-        Role role;
-        role = roleService.findByName("ROLE_USER");
-        userRoles.add(role);
-        /* role = roleService.findByName("ROLE_PREMIUM");
-        userRoles.add(role); */
-
+        Role role = roleService.findByName("ROLE_USER");
+        if (role != null) {
+            userRoles.add(role);
+        }
         user.setRoles(userRoles);
     }
 }
